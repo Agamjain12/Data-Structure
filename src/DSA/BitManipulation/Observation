@@ -1,0 +1,17 @@
+AND OPERATOR
+any number AND with 1, the digits remain same.
+
+XOR OPERATOR
+XOR of any number with 1, compliment of that number is the result.
+ f
+XOR of number with 0, results in the number itself.
+
+XOR of number with the same number, results in the 0 because nothing is exclusive now
+
+left shifting any number with 1 will result in 2x of that number. for Ex:
+a<<1 = 2*a
+
+right shifting any number with 1 will result in half of that number. for Ex:
+a>>1 = a/2
+
+a<<b = a*2^b;

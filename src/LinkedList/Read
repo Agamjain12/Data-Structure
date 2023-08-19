@@ -1,0 +1,3 @@
+Array has boundations, that its size is fixed, you can use Arraylist for dynamic storage, arraylist expands everytime
+an element is stored in it,two times. but thats too much work, making new list and copying elements in it.
+better we use LinkedList
