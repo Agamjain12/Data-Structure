@@ -5,31 +5,25 @@ import java.util.*;
 
 
 public class temo {
+
+
     public static void main(String[] args) {
         int[] nums = {5,7,9,2,2,0,0,0,0,4,4};
+        Arrays.sort(nums);
         Map<Integer,Integer> agam = new HashMap<>();
-        for(int i: nums){
-            if(i%2==0) {
-                agam.put(i, agam.getOrDefault(i, 0) + 1);
-            }
+        List<Integer> al = new ArrayList<>();
+
+        for(int i : nums){
+            agam.put(i,agam.getOrDefault(i,0)+1);
         }
 
-
-        int max =0;
-        int yerr=0;
-        for(Map.Entry<Integer,Integer> map: agam.entrySet()) {
-            if (map.getValue() >max) {
-
-               yerr = map.getKey();
-               max = map.getValue();
+            for(Map.Entry<Integer,Integer> e : agam.entrySet()){
+//                for(int i=0; i<agam.get(e.getKey()); i++){
+//                    al.add(e.getKey());
+                System.out.println("element: "+ e.getKey()+" frequency: "+e.getValue());
+//                }
             }
-            else if (map.getValue()==max) {
-                yerr = Integer.min(yerr,map.getKey());
-                max = map.getValue();
-            }
-        }
-        System.out.println(yerr);
-
+//        System.out.println(al);
     }
 }
 

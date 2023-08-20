@@ -2,7 +2,7 @@ package DSA;
 
 public class RomanToInt {
     public static void main(String[] args) {
-        String s ="XXVIII";
+        String s ="VI";
         int ans = 0, num = 0;
         for (int i = s.length()-1; i >= 0; i--) {
             switch(s.charAt(i)) {
