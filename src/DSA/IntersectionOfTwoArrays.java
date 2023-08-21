@@ -5,8 +5,8 @@ import java.util.*;
 
 public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
-        int [] arr1 = {2,4,5,4,5,8};
-        int [] arr2 = {2,2,4,3,4};
+        int [] arr1 = {2,4,5,4,5,8,10,11};
+        int [] arr2 = {2,2,4,3,4,8,8};
 
 
         HashMap<Integer,Integer> agam = new HashMap<>();
@@ -20,18 +20,37 @@ public class IntersectionOfTwoArrays {
             simo.put(i,simo.getOrDefault(i,0)+1);
         }
 
-        Set<Integer> large = agam.keySet().size() >= simo.keySet().size() ? agam.keySet() : simo.keySet();
-        Object[] small = agam.keySet().size() <= simo.keySet().size() ? agam.keySet().toArray() : simo.keySet().toArray();
-
-        System.out.println(small[1]);
-        int count=0;
+        Object[] small;
+        Set<Integer> large;
         ArrayList<Integer> li = new ArrayList<>();
-        for(int i =0; i<small.length; i++){
-            if(large.contains(small[i])){
-                li.add((Integer) small[i]);
-            }
+       if(agam.keySet().size()==simo.keySet().size()){
+           small = agam.keySet().toArray();
+           large = simo.keySet();
 
-        }
+           for(int i =0; i<small.length; i++){
+               if(large.contains(small[i])){
+                   li.add((Integer) small[i]);
+               }
+
+           }
+       }
+
+       else{
+            large = agam.keySet().size() > simo.keySet().size() ? agam.keySet() : simo.keySet();
+            small = agam.keySet().size() < simo.keySet().size() ? agam.keySet().toArray() : simo.keySet().toArray();
+
+           for(int i =0; i<small.length; i++){
+               if(large.contains(small[i])){
+                   li.add((Integer) small[i]);
+               }
+
+           }
+
+       }
+        System.out.println(large);
+        System.out.println(Arrays.toString(small));
+
+
         System.out.println(Arrays.toString(li.toArray()));
     }
 }
