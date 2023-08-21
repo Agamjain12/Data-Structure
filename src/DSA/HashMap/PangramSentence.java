@@ -13,6 +13,20 @@ public class PangramSentence {
         }
 
         System.out.println(agam.keySet().size());
+
+                               // without HashMap
+
+        if (sentence.length() < 26) {
+            System.out.println(false);
+        }
+        String alphas = "abcdefghijklmnopqrstuvwxyz";
+        for (int i = 0; i < alphas.length(); i++) {
+            if (sentence.indexOf(alphas.charAt(i)) == -1) {
+                System.out.println(false);
+            }
+        }
+
+
     }
 
 }
