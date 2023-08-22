@@ -12,21 +12,23 @@ public class temo {
         int [] nums1 = {2,4,5,4,5,8,10,11};
         int [] nums2 = {2,2,4,3,4,8,8};
 
-        Set<Integer> agam = new HashSet<>();
-        for(int i =0; i<nums1.length; i++){
-            for(int j =0; j<nums2.length; j++){
-                if(nums1[i]==nums2[j]){
-                    agam.add(nums1[i]);
-                    break;
-                }
+        HashMap<Integer, Integer> agam = new HashMap<>();
+        for(int i : nums1){
+           agam.put(i, agam.getOrDefault(i,0)+1);
+        }
 
+
+        ArrayList<Integer> al = new ArrayList<>();
+
+
+        for(int i : nums2){
+            if(agam.get(i) != null && agam.get(i) > 0){
+                al.add(i);
+                agam.put(i, agam.get(i) - 1);
             }
         }
-         int[] newarr = new int[agam.size()];
-        for(int i =0; i< newarr.length; i++){
-            newarr[i] = (int) agam.toArray()[i];
-        }
 
+        System.out.println(al);
     }
 }
 
