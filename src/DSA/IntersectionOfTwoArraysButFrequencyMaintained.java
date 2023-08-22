@@ -18,8 +18,10 @@ public class IntersectionOfTwoArraysButFrequencyMaintained {
 
 
         for(int i : nums2){
+
             if(agam.get(i) != null && agam.get(i) > 0){
                 al.add(i);
+           // reducing frequency after adding it on list
                 agam.put(i, agam.get(i) - 1);
             }
         }
