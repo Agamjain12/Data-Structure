@@ -9,26 +9,22 @@ public class temo {
 
     public static void main(String[] args) {
 
-        int [] nums1 = {2,4,5,4,5,8,10,11};
-        int [] nums2 = {2,2,4,3,4,8,8};
-
-        HashMap<Integer, Integer> agam = new HashMap<>();
-        for(int i : nums1){
-           agam.put(i, agam.getOrDefault(i,0)+1);
-        }
+        int [] nums = {2,4,5,-3,2,-1};
 
 
-        ArrayList<Integer> al = new ArrayList<>();
+        int max1 = Integer.MIN_VALUE, max2 = 0;
 
-
-        for(int i : nums2){
-            if(agam.get(i) != null && agam.get(i) > 0){
-                al.add(i);
-                agam.put(i, agam.get(i) - 1);
+        for(int i=0; i< nums.length; i++){
+            max2 += nums[i];
+            if(max1<max2){
+                max1=max2;
+            }
+            if(max2<0){
+                max2=0;
             }
         }
 
-        System.out.println(al);
+        System.out.println(max1);
     }
 }
 
